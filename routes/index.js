@@ -2,9 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', async (req, res) => {
-  var products = await ProductModel.find({}).populate('brand');
-    res.render('product/list', { products });
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
 });
 
 module.exports = router;
