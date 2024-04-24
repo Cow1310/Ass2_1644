@@ -1,0 +1,71 @@
+<div class="main-content">
+   <div class="row">
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-10">
+         <div class="table-wrapper">
+            <div class="table-title">
+               <div class="row">
+                  <div class="col-sm-6 p-0 flex justify-content-lg-start justify-content-center">
+                     <h2 class="ml-lg-2">Manage Category</h2>
+                  </div>
+                  <div class="col-sm-6 p-0 flex justify-content-lg-end justify-content-center">
+                     <a href="/category/add" class="btn btn-success" data-toggle="modal">
+                        <i class="material-icons">&#xE147;</i>
+                        <span>Add New Category</span>
+                     </a>
+                  </div>
+               </div>
+            </div>
+
+            <table class="table table-striped table-hover">
+               <thead>
+                  <tr>
+                     <th><span class="custom-checkbox">
+                           <input type="checkbox" id="selectAll">
+                           <label for="selectAll"></label></th>
+                     <th>Category Name</th>
+                     <th>Description</th>
+                     <th>Menu</th>
+                  </tr>
+               </thead>
+
+               <tbody>
+                  {{#each categories }}
+                  <tr>
+                     <th><span class="custom-checkbox">
+                           <input type="checkbox" id="checkbox1" name="option[]" value="1">
+                           <label for="checkbox1"></label></th>
+                     <th><a href="/category/detail/{{ _id }}">
+                           {{ categoryname }}
+                        </a></th>
+                     <th>{{ description }}</th>
+                     <th>
+                        <a href="/category/edit/{{ _id }}" class="edit" data-toggle="modal">
+                           <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
+                        </a>
+                        <a href="/category/delete/{{ _id }}" class="delete" data-toggle="modal">
+                           <i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
+                        </a>
+                     </th>
+                  </tr>
+                  {{/each}}
+               </tbody>
+            </table>
+
+            <div class="clearfix">
+               <div class="hint-text">showing <b>1</b> out of <b>25</b></div>
+               <ul class="pagination">
+                  <li class="page-item disabled"><a href="#">Previous</a></li>
+                  <li class="page-item active "><a href="#" class="page-link">1</a></li>
+                  <li class="page-item "><a href="#" class="page-link">2</a></li>
+                  <li class="page-item "><a href="#" class="page-link">3</a></li>
+                  <li class="page-item "><a href="#" class="page-link">4</a></li>
+                  <li class="page-item "><a href="#" class="page-link">5</a></li>
+                  <li class="page-item "><a href="#" class="page-link">Next</a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

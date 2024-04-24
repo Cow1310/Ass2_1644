@@ -1,0 +1,16 @@
+<a class="btn btn-info" href="/user/add">Add new user</a>
+<br><br>
+<table class="table table-bordered">
+   <tr>
+      <th>User Name</th>
+      <th>User Email</th>
+      <th>User Role</th>
+   </tr>
+   {{#each users }}
+   <tr>
+      <td>{{ name }}</td>
+      <td>{{ email }}</td>
+      <td>{{ role }}</td>
+   </tr>
+   {{/each}}
+</table>
